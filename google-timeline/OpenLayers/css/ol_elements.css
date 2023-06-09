@@ -1,0 +1,129 @@
+.ol-control button,
+.ol-control button:not(.ol-collapsed):active,
+.ol-control button:not(.ol-collapsed):focus,
+.ol-control button:not(.ol-collapsed):target {
+    background-color: var(--darkgrey);
+    border: none;
+}
+
+.ol-control button:hover {
+    background-color: var(--vibrantgreen);
+}
+
+
+/*  Verwijder de transparante box rondom de knoppen */
+
+.ol-control,
+.ol-control:hover {
+    background-color: transparent;
+    border: none;
+}
+
+.ol-unselectable {
+    background-color: none;
+    border: none;
+}
+
+/* Als er wordt geklikt animatie */
+
+.go-zoom button:active,
+.go-overview button:active {
+    transform: scale(.8);
+    transition: 50ms;
+}
+
+
+/* Custom zoombutton */
+
+.go-zoom {
+    top: unset;
+    left: unset;
+    right: 4%;
+    bottom: 8%;
+}
+
+.go-zoom button {
+    height: 3em;
+    width: 3em;
+    transition: all 250ms ease-out;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.ol-attribution {
+    top: unset;
+    left: unset;
+    right: 4%;
+    bottom: 2%;
+}
+
+.ol-attribution button {
+    height:2em;
+    width: 2em;
+    transition: all 250ms ease-out;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+/* overviewmap */
+
+.go-overview button {
+    height: 2.5em;
+    width: 2.5em;
+    transition: all 250ms ease-out;
+    border-radius: 3px;
+}
+
+
+/* Positie van de knop */
+
+.go-overview,
+.go-overview.ol-uncollapsible {
+    bottom: auto;
+    left: 2%;
+    right: auto;
+    top: 5%;
+}
+
+/*  De achtergrond kleur achter de kaart, is standaard wit */
+
+.go-overview:not(.ol-collapsed) {
+    background-color: var(--darkgrey);
+}
+
+
+/* Versteld de vorm van de kaart, heeft standaard een blauwe border */
+
+.go-overview .ol-overviewmap-map {
+    border: none;
+    width: 350px;
+    height: 275px;
+}
+
+.go-overview .ol-overviewmap-box {
+    border: 3px dashed var(--vibrantgreen);
+}
+
+
+/*  ten opzichte van de kaart verplaatst de button */
+
+.go-overview:not(.ol-collapsed) button {
+    bottom: auto;
+    left: 1;
+    right: auto;
+    top: 1;
+}
+
+
+@media screen and (max-width: 1920px) {
+
+    .go-overview .ol-overviewmap-map {
+        height: 100px;
+        width: 300px;
+    }
+
+    .go-overview,
+    .go-overview.ol-uncollapsible {
+    top: 5%;
+}
+}

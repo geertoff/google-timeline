@@ -1,0 +1,166 @@
+/* ______________Toggle Switch _______________*/
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 97px;
+    height: 46px;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 34px;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    transition: .4s;
+}
+/* het witte element die  beweegt */
+
+.slider::before {
+    position: absolute;
+    content: '';
+    height: 26px;
+    width: 26px;
+    left: 15px;
+    top: 9px;
+    background-image: url(../image/slider.png);
+    background-repeat: no-repeat;
+    -webkit-transition: .4s cubic-bezier(.6, .01, .54, 1.43);
+    -moz-transition: .4s cubic-bezier(.6, .01, .54, 1.43);
+    transition: .4s cubic-bezier(.6, .01, .54, 1.43);
+}
+
+
+/* Zorgt ervoor dat het naar rechts beweegt */
+
+input:checked+.slider::before {
+    -moz-transform: translateX(50px) scaleY(-1);
+    -webkit-transform: translateX(50px) scaleY(-1);
+    transform: translateX(50px) scaleY(-1);
+}
+
+input:checked+.slider {
+    background-color: var(--vibrantgreen);
+}
+
+/* als de gebruiker heeft geklikt */
+
+input:focus+.slider {
+    box-shadow: 0 0 1px var(--vibrantgreen);
+}
+
+
+/* moz of webkit of ms voor browsers als ze het niet ondersteunen */
+
+
+/* ______________Variable Switcher _______________*/
+
+#variable-switch {
+    top: 30px;
+    left: 30px;
+}
+
+#variable-switch input:checked+.slider {
+    background-color: var(--darkgrey);
+}
+
+
+/* scale wordt gebruikt om de slider te flippen */
+
+#variable-switch input:checked+.slider::before {
+    transform: translateX(40px) scale(-1, -1);
+}
+
+.on,
+.off {
+    position: absolute;
+    top: 45%;
+    transition: .4s;
+    font-weight: 700;
+}
+
+.off {
+    left: 50%;
+}
+
+.on {
+    opacity: 0;
+    left: 15%;
+}
+
+input:checked+.slider .on {
+    opacity: 1;
+}
+
+input:checked+.slider .off {
+    opacity: 0;
+}
+
+/* zorgt ervoor dat de tijd-waardes niet zichtbaar zijn mits er op de variable swithcer wordt geklikt */
+
+.time-switch {
+    display: none;
+}
+
+
+/*_______________ Layer Switcher _______________*/
+
+.layersection .slider {
+    background-color: none;
+    border: thin solid var(--textgrey);
+}
+
+.layersection input:checked+.slider {
+    border: none;
+}
+
+.layersection .slider {
+    left: 5%;
+}
+
+.layersection .switch {
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 1920px) {
+
+
+    .layersection .slider {
+        top: 0%;
+    }
+
+    .switch {
+        width: 80px;
+        height: 39px;
+    }
+
+    .slider::before {
+        top: 9px;
+        background-image: url(../image/slider_small.png);
+        width: 20px;
+    }
+    /*  zorgen dat de slider element horizontaal blijft schuiven */
+    input:checked+.slider::before{
+        top: 4px;
+    }
+    input:checked+.slider::before {
+        transform: translateX(40px) scaleY(-1);
+    }
+
+    #variable-switch {
+        top: 29px;
+        left: 16px;
+    }   
+
+
+    #variable-switch input:checked+.slider::before {
+        transform: translateX(30px) scale(-1, -1);
+    }
+    
+    
+
+}

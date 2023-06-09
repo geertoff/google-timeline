@@ -1,0 +1,115 @@
+/* ______________layer switcher _______________*/
+
+.layersection {
+    position: relative;
+    float: left;
+    padding-right: 10px;
+}
+
+
+/* verbergen van input radio */
+
+.nobullets {
+    list-style: none;
+    padding-left: 10px;
+}
+
+/* positioning text voor layer switcher */
+.overlay-position {
+    position: absolute;
+    left: 120px;
+    top: 20px;
+}
+
+/* zorgt ervoor dat het standaard bolletje van een checkboxverdwijnt */
+
+.layer-switcher input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.greybasemap,
+.colourbasemap {
+    /* positioneert de afbeedling in ruimte van div */
+    background-position: center center;
+    /* zorgt ervoor dat de afbeelding de breedte gebruikt */
+    background-size: cover;
+}
+
+.greybasemap {
+    background-image: url('../image/darkgrey_basemap.jpg');
+}
+
+.colourbasemap {
+    background-image: url('../image/colour_basemap.jpg');
+}
+
+
+/*  als de laag is geselecteerd moet de filters uitstaan */
+
+input[type="radio"]:checked+.layer-thumbnail {
+    -webkit-filter: none;
+    -moz-filter: none;
+    filter: none;
+    box-shadow: 0 0 0 2px var(--vibrantgreen);
+}
+
+
+/* properties voor de vorm van het plaatje */
+
+.layer-thumbnail {
+    position: relative;
+    background-repeat: no-repeat;
+    border-radius: 17px;
+    display: inline-block;
+    width: 102px;
+    height: 50px;
+    -webkit-transition: all 250ms ease-in-out;
+    -moz-transition: all 250ms ease-in-out;
+    transition: all 250ms ease-out;
+    -webkit-filter: brightness(80%) opacity(80%) blur(1px);
+    -moz-filter: brightness(80%) opacity(80%) blur(1px);
+    filter: brightness(80%) opacity(80%) blur(1px);
+    border: 0px;
+}
+
+.layer-thumbnail:hover {
+    -webkit-filter: brightness(100%) opacity(100) blur(0px);
+    -moz-filter: brightness(100%) opacity(100) blur(0px) drop-shadow(0px 0px 10px var(--vibrantgreen));
+    filter: brightness(100%) opacity(100%) blur(0px);
+    border: 0px;
+    transform: scale(1.1);
+}
+
+.layer-thumbnail:checked {
+    border: 2px solid var(--vibrantgreen);
+}
+
+/* overschrijven van skeleton framework en verkleining afstand voor de toggle-swtichers */
+
+li {
+    margin-bottom: -5px;
+}
+
+
+/* Afstand tussen elementen bij basemaplayers */
+
+#basemaplayers li {
+    margin-bottom: -2px;
+}
+
+
+
+@media screen and (max-width: 1920px) {
+    
+    .overlay-position {
+        left: 99px;
+    }
+
+    .layer-thumbnail {
+        height: 40px;
+        width: 85px;
+    }
+
+}

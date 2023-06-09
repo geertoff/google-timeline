@@ -1,0 +1,52 @@
+/* achtergrond van de modal */
+.modal {
+    transition: 200ms;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-header {
+    padding: 15px 15px 0px 15px;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #dadada;
+    border-radius: 5px;
+    margin: 10% auto;
+    width: 500px;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.6);
+    animation-name: modalopen;
+    animation-duration: 500ms;
+}
+
+.modal-body {
+    padding: 15px 20px;
+}
+/* de knop om de modal te sluiten */
+.closeBtn {
+    color: var(--textgrey);
+    float: right;
+    font-size: 30px;
+    cursor: pointer;
+    padding-top: -20px;
+}
+
+.closeBtn:hover   {
+    color: #000;
+    cursor: pointer;
+}
+
+@keyframes modalopen {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}

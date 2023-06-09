@@ -1,0 +1,102 @@
+ 
+/* ______________CSS voor intromenu _______________*/
+
+body {
+    background-color: var(--darkgrey);
+}
+
+/* Fonts */
+
+h1 {
+    font-family: Titillium Web, sans-serif;
+    font-size: 25px;
+    color: var(--textgrey);
+    font-size: 25px;
+    font-weight: 400;
+}
+
+p {
+    text-align: justify;
+    /* max-width: 200px; */
+}
+.intro-text {
+    font-family: Titillium-bold, sans-serif;
+    font-size: 53px;
+    font-weight: 200;
+    line-height: 80px;
+}
+
+/* De automatisch getypte text */
+.intro-placeholder { 
+    position: absolute;
+    top: 50px;
+    color: var(--textgrey);
+    max-height: 200px;  
+}   
+
+.explanation-placeholder {
+    position: relative;  
+    top: 220px;
+    height: 200px;
+    color: var(--textgrey);
+}
+
+
+
+.login {
+    position: relative;
+    margin-top: 20px;
+    left: 20%
+}
+
+.button {
+    transition: 200ms;
+    font-size: 15px;
+
+}
+.button:hover{
+    border: none;
+    background-color: var(--vibrantgreen);
+    color: var(--darkgreen);
+    transform: scale(0.9);
+}
+
+
+input, textarea {
+    width: 50%;
+}
+
+
+/*  */
+.accordions {
+    margin-top: 50px;
+}
+
+.accordion-button::after {
+    transform: scale(1.5); 
+    position: relative;
+    content: '\25be';
+    float: right;
+    left: 8%;
+}
+
+/* als de knop is geselecteerd */
+.active-accordion-button {
+    background-color: var(--vibrantgreen);
+    color: var(--darkgreen);
+
+}
+
+.active-accordion-button::after {
+    content: '\25b4';
+    transform: scale(1.5); 
+    color: var(--darkgreen);
+}
+
+.accordion-content {
+    overflow: hidden;
+    max-height: 0;
+    transition: 200ms;
+    padding: 0 5%;  
+    
+}
